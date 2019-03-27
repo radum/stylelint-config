@@ -18,7 +18,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "watch": "jest --watch"
+    "watch": "jest --watch",
+    "release": "np --no-cleanup --no-yarn"
   },
   "publishConfig": {
     "access": "public"
@@ -29,7 +30,8 @@
   },
   "devDependencies": {
     "eslint": "^5.14.1",
-    "jest": "^24.1.0"
+    "jest": "^24.1.0",
+    "np": "*"
   },
   "peerDependencies": {
     "stylelint": "^9.0.0"
