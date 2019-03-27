@@ -1,6 +1,6 @@
 {
   "name": "@radum/stylelint-config",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "@radum Stylelint config",
   "keywords": [
     "stylelint",
@@ -19,6 +19,9 @@
   "scripts": {
     "test": "jest",
     "watch": "jest --watch"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "stylelint-no-unsupported-browser-features": "^3.0.2",
