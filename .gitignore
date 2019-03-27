@@ -1,0 +1,22 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+# Useful .gitignore templates: https://github.com/github/gitignore
+
+# Node
+node_modules
+npm-debug.log
+
+# Build, cache
+.cache
+.esm-cache
+.eslintcache
+.sass-cache
+.tmp
+
+# Code coverage
+coverage
+.nyc_output
+.coverage
+
+# Editors
+.vscode
