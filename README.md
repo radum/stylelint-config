@@ -78,6 +78,18 @@ For example, to change the at-rule-no-unknown rule to use its ignoreAtRules opti
 }
 ```
 
+## Deploy
+
+To deploy a new version, make sure you have a clean `node_modules` folder and then install the stylelint dependency like this:
+
+```bash
+npm i stylelint --no-save --no-package-lock
+```
+
+Then run `np` or `npm run release`. This is because np needs to run without a cleanup to be able to run tests that need stylelint.
+
+Until `np` adds an option for peer dependency use the flow above.
+
 ## Complementary tools
 
 ### Editor plugins
