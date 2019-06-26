@@ -1,7 +1,7 @@
 {
   "name": "@radum/stylelint-config",
   "version": "0.3.0",
-  "description": "@radum Stylelint config",
+  "description": "@radum Stylelint Shareable Config",
   "keywords": [
     "stylelint",
     "stylelint-config"
