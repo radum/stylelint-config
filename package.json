@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "stylelint-no-unsupported-browser-features": "^4.0.0",
-    "stylelint-order": "^3.1.1",
+    "stylelint-order": "^4.0.0",
     "stylelint-scss": "^3.13.0"
   },
   "devDependencies": {
