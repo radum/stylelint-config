@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git@github.com:radum/stylelint-config.git"
   },
+  "engines": {
+    "node": ">=10"
+  },
   "main": "index.js",
   "files": [
     "rules/**/*.js",
