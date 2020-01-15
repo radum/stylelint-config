@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [2.0.0]
+
+- chore: bump deps  1153a95
+- minimum node version 10  43f5f65
+- Update changelog  6041c6e
+
+https://github.com/radum/stylelint-config/compare/v1.1.1...v2.0.0
+
 ## [1.1.1]
 
 - chore: bump deps  0d99cf7
