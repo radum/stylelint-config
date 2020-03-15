@@ -4,13 +4,14 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '10', '12', '13' ]
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      uses: actions/npm@master
+      uses: actions/setup-node@v1
       with:
-        args: install
-    - name: Test
-      uses: actions/npm@master
-      with:
-        args: test
+        node-version: ${{ matrix.node }}
+    - run: npm install
+    - run: npm test
