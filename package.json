@@ -31,15 +31,15 @@
   "dependencies": {
     "stylelint-no-unsupported-browser-features": "^4.0.0",
     "stylelint-order": "^4.0.0",
-    "stylelint-scss": "^3.13.0"
+    "stylelint-scss": "^3.15.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
     "jest": "^25.1.0",
     "np": "^6.2.0",
-    "stylelint": "^13.0.0"
+    "stylelint": "^13.2.1"
   },
   "peerDependencies": {
-    "stylelint": "^13.0.0"
+    "stylelint": "^13.2.1"
   }
 }
