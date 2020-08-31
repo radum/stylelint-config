@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.0.0]
+
+- Fix scss at rule, add more tests, bump deps  25ecf0b
+- Merge pull request #20 from radum/dependabot/npm_and_yarn/eslint-7.2.0  4e0a592
+- Bump eslint from 6.8.0 to 7.2.0  07ca346
+- Merge pull request #17 from radum/dependabot/npm_and_yarn/jest-26.0.1  a44d98a
+- Bump jest from 25.5.4 to 26.0.1  c14a303
+- Update push.yml  59603fa
+- Update push.yml  860ab90
+- Remove renovate.json as it was deprecated  742a164
+- chore: bump deps  8aa4f62
+- Merge pull request #12 from radum/dependabot/npm_and_yarn/jest-25.1.0  8e9b551
+- Bump jest from 24.9.0 to 25.1.0  af3cd0e
+- Merge pull request #15 from radum/dependabot/npm_and_yarn/np-6.2.0  019c8fc
+- Bump np from 5.2.1 to 6.2.0  11b3028
+- Create push.yml  1b13690
+- Delete main.workflow  634a15e
+- update changelog  5c94332
+
+https://github.com/radum/stylelint-config/compare/v2.0.0...v3.0.0
+
 ## [2.0.0]
 
 - chore: bump deps  1153a95
