@@ -1,0 +1,16 @@
+@use "sass:map";
+
+$global-spacing-layout-sizes: (
+	"01": $layout-01,
+	"02": $layout-02
+) !default;
+
+@function t-spacing($size) {
+	$spacing: map.get($global-spacing-sizes, $size);
+
+	@if not map.has-key($global-spacing-sizes, $size) {
+		@error "Invalid style specified! #{$size} doesn't exist. Choose one of #{map.keys($global-spacing-sizes)}";
+	}
+
+	@return $spacing;
+}

@@ -14,11 +14,27 @@ npm install -D @radum/stylelint-config
 
 ## Usage
 
+This package includes the following configurations:
+
+- @radum/stylelint-config - The base code style guide.
+- @radum/stylelint-config/scss - To be used in addition to "@radum/stylelint-config" configuration by projects that use Sass.
+
 If you've installed `@radum/stylelint-config` locally within your project, just set your stylelint config to:
 
 ```bash
 {
   "extends": "@radum/stylelint-config"
+}
+```
+
+or if you are working on a Scss file:
+
+```json
+{
+  "extends": [
+    "@radum/stylelint-config"
+    "@radum/stylelint-config/scss"
+  ]
 }
 ```
 
