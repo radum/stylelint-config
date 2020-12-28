@@ -37,7 +37,7 @@
   "devDependencies": {
     "eslint": "^7.7.0",
     "jest": "^26.4.2",
-    "np": "^6.5.0",
+    "np": "^7.1.0",
     "stylelint": "^13.6.1"
   },
   "peerDependencies": {
