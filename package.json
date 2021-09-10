@@ -30,7 +30,7 @@
     "access": "public"
   },
   "dependencies": {
-    "stylelint-no-unsupported-browser-features": "^4.0.0",
+    "stylelint-no-unsupported-browser-features": "^5.0.1",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.18.0"
   },
