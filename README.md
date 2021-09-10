@@ -1,4 +1,4 @@
-# @radum Stylelint config [![Build Status](https://travis-ci.com/radum/stylelint-config.svg?branch=master)](https://travis-ci.com/radum/stylelint-config)
+# @radum Stylelint config
 
 > Personal recommended shareable config for stylelint.
 
