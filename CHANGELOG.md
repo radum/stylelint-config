@@ -7,7 +7,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [4.0.0]
 
-- Bump all deps
+- chore: update changelog  5d551d9
+- chore: bump deps  6cf1357
+- Merge pull request #37 from radum/dependabot/npm_and_yarn/stylelint-no-unsupported-browser-features-5.0.1  a915329
+- Merge pull request #35 from radum/dependabot/npm_and_yarn/jest-27.1.1  7636c37
+- fix(deps): bump stylelint-no-unsupported-browser-features  5943fae
+- Merge pull request #29 from radum/dependabot/npm_and_yarn/stylelint-no-unsupported-browser-features-5.0.1  48992ea
+- Merge pull request #36 from radum/dependabot/github_actions/actions/setup-node-2.4.0  b712db8
+- Update README.md  fcd379a
+- Bump actions/setup-node from 1 to 2.4.0  776b366
+- Update dependabot.yml  630569b
+- Bump jest from 26.6.3 to 27.1.1  7381853
+- Create funding.yml  fc2bbdb
+- Delete release-drafter.yml  95a4272
+- Merge pull request #28 from radum/dependabot/add-v2-config-file  7b5f073
+- Bump stylelint-no-unsupported-browser-features from 4.1.4 to 5.0.1  69662c4
+- Upgrade to GitHub-native Dependabot  fbe5391
+- chore: update changelog  a738f41
+
+https://github.com/radum/stylelint-config/compare/v3.0.0...v4.0.0
 
 ## [3.0.0]
 
