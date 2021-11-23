@@ -14,3 +14,7 @@ $global-spacing-layout-sizes: (
 
 	@return $spacing;
 }
+
+.class {
+	margin: t-spacing(2);
+}

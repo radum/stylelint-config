@@ -30,17 +30,18 @@
     "access": "public"
   },
   "dependencies": {
-    "stylelint-no-unsupported-browser-features": "^5.0.1",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.20.1"
+    "postcss-scss": "^4.0.2",
+    "stylelint-no-unsupported-browser-features": "^5.0.2",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "jest": "^27.1.1",
-    "np": "^7.5.0",
-    "stylelint": "^13.13.1"
+    "eslint": "^8.3.0",
+    "jest": "^27.3.1",
+    "np": "^7.6.0",
+    "stylelint": "^14.1.0"
   },
   "peerDependencies": {
-    "stylelint": "^13.13.1"
+    "stylelint": "^14.1.0"
   }
 }

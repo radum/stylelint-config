@@ -77,7 +77,7 @@ For example:
 
 Simply add a "rules" key to your config, then add your overrides and additions there.
 
-For example, to change the at-rule-no-unknown rule to use its ignoreAtRules option, turn off the block-no-empty rule, and add the unit-whitelist rule:
+For example, to change the at-rule-no-unknown rule to use its ignoreAtRules option, turn off the block-no-empty rule, and add the unit-allowed-list rule:
 
 ```json
 {
@@ -89,7 +89,7 @@ For example, to change the at-rule-no-unknown rule to use its ignoreAtRules opti
       ]
     }],
     "block-no-empty": null,
-    "unit-whitelist": ["em", "rem", "s"]
+    "unit-allowed-list": ["em", "rem", "s"]
   }
 }
 ```
