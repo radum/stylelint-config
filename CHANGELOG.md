@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [5.0.0]
+
+- Update push.yml  9f6d247
+- feat: migrate to stylelint 14  14180e0
+- Update release 4.0 changelog file  85551c8
+- Merge pull request #39 from radum/dependabot/github_actions/actions/setup-node-2.4.1  4e82318
+- Bump actions/setup-node from 2.4.0 to 2.4.1  803d048
+
+https://github.com/radum/stylelint-config/compare/v4.0.0...v5.0.0
+
 ## [4.0.0]
 
 - chore: update changelog  5d551d9
