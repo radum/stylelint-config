@@ -20,7 +20,6 @@ module.exports = {
 				"Expect class selector to conform to BEM."
 		}
 	],
-	"selector-max-empty-lines": 0,
 	"selector-max-compound-selectors": 4,
 	"selector-max-specificity": "0,4,1",
 	"selector-no-vendor-prefix": true,

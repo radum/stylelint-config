@@ -1,0 +1,66 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  lint-javascript:
+    name: Lint JavaScript
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          key: npm-${{ hashFiles('package.json') }}
+          path: ~/.npm
+          restore-keys: |
+            npm-
+      - name: Install dependencies
+        run: npm i --ignore-scripts --no-audit --no-progress --prefer-offline
+      - name: Lint
+        run: npm run lint:js
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.npm-cache.outputs.dir }}
+          key: |
+            npm-${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('package.json') }}
+          restore-keys: |
+            npm-${{ runner.os }}-${{ matrix.node-version }}-
+      - name: Install dependencies
+        run: npm i --ignore-scripts --no-audit --no-progress --prefer-offline
+      - if: runner.os != 'Windows'
+        name: Test
+        run: npm run test
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [18]
+        os: [ubuntu-latest]

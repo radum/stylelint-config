@@ -11,7 +11,8 @@ module.exports = {
 	rules: {
 		...possibleErrors,
 		...limitLanguageFeatures,
-		...stylisticIssues,
+		// Deprecated rules
+		// ...stylisticIssues,
 		...order
 	}
 };
