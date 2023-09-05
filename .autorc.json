@@ -1,0 +1,10 @@
+{
+	"onlyPublishWithReleaseLabel": true,
+	"noVersionPrefix": false,
+	"plugins": [
+		"npm",
+		"all-contributors",
+		"first-time-contributor",
+		"released"
+	]
+}

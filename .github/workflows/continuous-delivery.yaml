@@ -1,0 +1,35 @@
+name: Continuous Delivery
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - '*.x' # maintenance releases such as 12.x
+      - main
+      - beta
+      - next
+
+jobs:
+  build:
+    name: Release
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Prepare repository
+        run: git fetch --unshallow --tags
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - name: Install dependencies
+        run: npm i --ignore-scripts --no-audit --no-progress --prefer-offline
+      - name: Intuit Auto
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx auto shipit
