@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:radum/stylelint-config.git"
+    "url": "git+ssh://git@github.com/radum/stylelint-config.git"
   },
   "engines": {
     "node": ">=10"
