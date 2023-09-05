@@ -1,3 +1,35 @@
+# v6.0.0 (Tue Sep 05 2023)
+
+#### 💥 Breaking Change
+
+- Update auto base branch [#75](https://github.com/radum/stylelint-config/pull/75) ([@radum](https://github.com/radum))
+
+#### 🐛 Bug Fix
+
+- Update readme file to update te release pipeline [#74](https://github.com/radum/stylelint-config/pull/74) ([@radum](https://github.com/radum))
+- Update npm deployment and package management to Intuit Auto [#73](https://github.com/radum/stylelint-config/pull/73) ([@radum](https://github.com/radum))
+
+#### ⚠️ Pushed to `main`
+
+- Corrected some errors in your package.json ([@radum](https://github.com/radum))
+- Update package.json with registry link ([@radum](https://github.com/radum))
+- Add CD pipeline ([@radum](https://github.com/radum))
+- Update tests and make empty block a warning ([@radum](https://github.com/radum))
+- Update dependencies and remove deprecated rules ([@radum](https://github.com/radum))
+- docs: update changelog ([@radum](https://github.com/radum))
+
+#### 🔩 Dependency Updates
+
+- Bump actions/checkout from 3 to 4 [#72](https://github.com/radum/stylelint-config/pull/72) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump actions/setup-node from 2.4.1 to 2.5.0 [#42](https://github.com/radum/stylelint-config/pull/42) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # Changelog [OLD PRE intuit auto]
 
 All notable changes to this project will be documented in this file.
