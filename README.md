@@ -6,6 +6,19 @@ It turns on all the possible errors rules within stylelint based on my own CSS s
 
 Use it as is or as a foundation for your own config. You can extend or clone and change.
 
+- [@radum Stylelint config](#radum-stylelint-config)
+	- [Installation](#installation)
+	- [Usage](#usage)
+		- [Stylelint no unsupported browser features](#stylelint-no-unsupported-browser-features)
+		- [Extending the config](#extending-the-config)
+	- [Deploy](#deploy)
+		- [Locally](#locally)
+	- [Complementary tools](#complementary-tools)
+		- [Editor plugins](#editor-plugins)
+		- [Editors](#editors)
+		- [Find stylelint rules](#find-stylelint-rules)
+	- [Changelog](#changelog)
+
 ## Installation
 
 ```bash
@@ -96,9 +109,28 @@ For example, to change the at-rule-no-unknown rule to use its ignoreAtRules opti
 
 ## Deploy
 
-To deploy a new version raise PRs and add the necesary labels based on the changes then when you need to release add a `release` label and merge.
+Betwween releases you can raise PRs and merge them, and / or commit straight into `main`. All of them will be used to generate a changelog and a release.
 
-The you can run `npm run release` locally which will run Intuit Auto.
+To deploy a new version merge the final PR and add a `release` label to it + a label that will be used to do a `major`, `minor`, or `patch` and merge it.
+
+### Locally
+
+Make sure the `GITHUB_TOKEN` and `NPM_TOKEN` env vars are set. Also if you have 2FA enabled Auto only works properly if you manually update your local `~/.npmrc` file with the NPM token above like this `//registry.npmjs.org/:_authToken={TOOKEN VALUE HERE}`. Unless I do that it fails to npm publish. Until that is fixed either use CI or this for deployments.
+
+Then run `npm run release` or `npx auto shipit` which will run Intuit Auto.
+
+Example:
+
+```bash
+export GITHUB_TOKEN=...
+export NPM_TOKEN=...
+npx auto shipit
+# This is to remove them from your local
+unset GITHUB_TOKEN
+unset NPM_TOKEN
+```
+
+> Also don't forget to remove the token from your local `.npmrc` file.
 
 ## Complementary tools
 
