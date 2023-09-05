@@ -10,6 +10,7 @@ Use it as is or as a foundation for your own config. You can extend or clone and
 	- [Installation](#installation)
 	- [Usage](#usage)
 		- [Stylelint no unsupported browser features](#stylelint-no-unsupported-browser-features)
+		- [Stylelint pattern rules](#stylelint-pattern-rules)
 		- [Extending the config](#extending-the-config)
 	- [Deploy](#deploy)
 		- [Locally](#locally)
@@ -47,7 +48,8 @@ or if you are working on a Scss file:
   "extends": [
     "@radum/stylelint-config"
     "@radum/stylelint-config/scss"
-  ]
+  ],
+  "customSyntax": "postcss-scss"
 }
 ```
 
@@ -83,6 +85,19 @@ For example:
 		],
 		"severity": "warning"
 	}]
+}
+```
+
+### Stylelint pattern rules
+
+If you need to enforce naming conventions with pattern rules.
+
+```json
+{
+  "extends": [
+    "@radum/stylelint-config"
+    "@radum/stylelint-config/patterns"
+  ]
 }
 ```
 

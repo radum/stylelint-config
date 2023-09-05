@@ -2,8 +2,6 @@
 
 const possibleErrors = require('./rules/possible-errors');
 const limitLanguageFeatures = require('./rules/limit-language-features');
-// Deprecated rules
-// const stylisticIssues = require('./rules/stylistic-issues');
 const order = require('./rules/order');
 
 module.exports = {
@@ -14,8 +12,6 @@ module.exports = {
 	rules: {
 		...possibleErrors,
 		...limitLanguageFeatures,
-		// Deprecated rules
-		// ...stylisticIssues,
 		...order
 	}
 };
