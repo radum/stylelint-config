@@ -13,6 +13,10 @@ npm-debug.log
 .sass-cache
 .tmp
 
+# local env files
+.env
+.env*.local
+
 # Code coverage
 coverage
 .nyc_output
