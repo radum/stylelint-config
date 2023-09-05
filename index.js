@@ -1,6 +1,9 @@
+'use strict';
+
 const possibleErrors = require('./rules/possible-errors');
 const limitLanguageFeatures = require('./rules/limit-language-features');
-const stylisticIssues = require('./rules/stylistic-issues');
+// Deprecated rules
+// const stylisticIssues = require('./rules/stylistic-issues');
 const order = require('./rules/order');
 
 module.exports = {

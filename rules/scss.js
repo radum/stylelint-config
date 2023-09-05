@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
 	// You must disable stylelint's core rule to make this rule work.
 	// https://github.com/kristerkari/stylelint-scss/blob/master/src/rules/at-rule-no-unknown/README.md#at-rule-no-unknown

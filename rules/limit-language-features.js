@@ -1,3 +1,5 @@
+'use strict';
+
 const pascalCase = "([A-Z][a-zA-Z0-9]+)"; // PascalCase
 const kebabCase = "([a-z][a-z0-9]*(-[a-z0-9]+)*)"; // kebab-case
 const camelCase = "([a-z0-9]+([A-Z][a-z0-9]+)*)"; // camelCase

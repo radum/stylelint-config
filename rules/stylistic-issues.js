@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
 	"color-hex-case": "upper",
 	"font-family-name-quotes": "always-where-recommended",

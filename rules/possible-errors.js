@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
 	"color-no-invalid-hex": true,
 	"font-family-no-duplicate-names": true,
@@ -8,7 +10,12 @@ module.exports = {
 	"keyframe-declaration-no-important": true,
 	"declaration-block-no-duplicate-properties": true,
 	"declaration-block-no-shorthand-property-overrides": true,
-	"block-no-empty": true,
+	"block-no-empty": [
+		true,
+		{
+			"severity": "warning"
+		}
+	],
 	"selector-pseudo-class-no-unknown": true,
 	"selector-pseudo-element-no-unknown": true,
 	"media-feature-name-no-unknown": true,
