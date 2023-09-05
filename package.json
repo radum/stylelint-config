@@ -28,7 +28,8 @@
     "release": "auto shipit"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "postcss-scss": "^4.0.7",
