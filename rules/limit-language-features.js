@@ -58,7 +58,6 @@ module.exports = {
 			ignore: ['after-comment', 'inside-single-line-block']
 		}
 	],
-	'declaration-block-no-redundant-longhand-properties': true,
 	'declaration-empty-line-before': [
 		'always',
 		{
