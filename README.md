@@ -13,7 +13,7 @@ Use it as is or as a foundation for your own config. You can extend or clone and
 		- [Stylelint pattern rules](#stylelint-pattern-rules)
 		- [Extending the config](#extending-the-config)
 	- [Deploy](#deploy)
-		- [Locally](#locally)
+		- [Deploy Locally](#deploy-locally)
 	- [Complementary tools](#complementary-tools)
 		- [Editor plugins](#editor-plugins)
 		- [Editors](#editors)
@@ -23,7 +23,7 @@ Use it as is or as a foundation for your own config. You can extend or clone and
 ## Installation
 
 ```bash
-npm install -D @radum/stylelint-config
+npm install -D @radum/stylelint-config stylelint
 ```
 
 ## Usage
@@ -48,10 +48,11 @@ or if you are working on a Scss file:
   "extends": [
     "@radum/stylelint-config"
     "@radum/stylelint-config/scss"
-  ],
-  "customSyntax": "postcss-scss"
+  ]
 }
 ```
+
+> This will also set `"customSyntax": "postcss-scss"`.
 
 If you've globally installed @radum/stylelint-config using the -g flag, then you'll need to use the absolute path to @radum/stylelint-config in your config e.g.
 
@@ -128,7 +129,7 @@ Betwween releases you can raise PRs and merge them, and / or commit straight int
 
 To deploy a new version merge the final PR and add a `release` label to it + a label that will be used to do a `major`, `minor`, or `patch` and merge it.
 
-### Locally
+### Deploy Locally
 
 Make sure the `GITHUB_TOKEN` and `NPM_TOKEN` env vars are set. Also if you have 2FA enabled Auto only works properly if you manually update your local `~/.npmrc` file with the NPM token above like this `//registry.npmjs.org/:_authToken={TOOKEN VALUE HERE}`. Unless I do that it fails to npm publish. Until that is fixed either use CI or this for deployments.
 

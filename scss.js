@@ -3,7 +3,7 @@
 const scss = require('./rules/scss');
 
 module.exports = {
-	customSyntax: require('postcss-scss'),
+	customSyntax: 'postcss-scss',
 	plugins: ['stylelint-scss'],
 	rules: {
 		...scss
