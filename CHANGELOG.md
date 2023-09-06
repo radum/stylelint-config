@@ -1,3 +1,15 @@
+# v6.1.1 (Wed Sep 06 2023)
+
+#### 🐛 Bug Fix
+
+- Fix the way Scss syntax is loaded [#77](https://github.com/radum/stylelint-config/pull/77) ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v6.1.0 (Wed Sep 06 2023)
 
 #### 🚀 Enhancement
