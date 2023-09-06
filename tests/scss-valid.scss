@@ -1,9 +1,10 @@
 @use "sass:map";
+@use "tools"
 
 $global-spacing-layout-sizes: (
 	"01": $layout-01,
 	"02": $layout-02
-) !default;
+);
 
 @function t-spacing($size) {
 	$spacing: map.get($global-spacing-sizes, $size);
@@ -16,5 +17,5 @@ $global-spacing-layout-sizes: (
 }
 
 .class {
-	margin: t-spacing(2);
+	margin: tools.t-spacing(2);
 }
