@@ -1,3 +1,15 @@
+# v6.1.2 (Wed Sep 06 2023)
+
+#### 🐛 Bug Fix
+
+- Fix Scss rules that should override the stylelint core ones [#78](https://github.com/radum/stylelint-config/pull/78) ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v6.1.1 (Wed Sep 06 2023)
 
 #### 🐛 Bug Fix
