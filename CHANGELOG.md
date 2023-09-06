@@ -1,3 +1,19 @@
+# v6.1.0 (Wed Sep 06 2023)
+
+#### 🚀 Enhancement
+
+- Loads of rules updates [#76](https://github.com/radum/stylelint-config/pull/76) ([@radum](https://github.com/radum))
+
+#### ⚠️ Pushed to `main`
+
+- Update readme file with depolyment steps ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v6.0.0 (Tue Sep 05 2023)
 
 #### 💥 Breaking Change
