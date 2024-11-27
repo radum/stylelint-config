@@ -1,4 +1,6 @@
-import { conventions, possibleErrors } from './configs/index.js';
+import postcssScss from 'postcss-scss';
+import { conventions, possibleErrors, scss, stylistic } from './configs/index.js';
+import { mergeConfigs } from './utils.js';
 
 /**
  * Generates a Stylelint configuration object based on the provided options.
@@ -10,7 +12,7 @@ import { conventions, possibleErrors } from './configs/index.js';
  *
  * @returns {import('stylelint').Config} The generated Stylelint configuration object.
  */
-export function radum(options = {}) {
+export function radum(options = {}, ...userConfigs) {
 	const {
 		scss: enableScss = false
 	} = options;
@@ -18,7 +20,7 @@ export function radum(options = {}) {
 	const stylisticOptions = options.stylistic === false ? false : typeof options.stylistic === 'object' ? options.stylistic : {};
 
 	/** @type {import('stylelint').Config} */
-	const config = {
+	const defaultConfig = {
 		plugins: ['stylelint-order', 'stylelint-no-unsupported-browser-features'],
 		rules: {
 			...possibleErrors(),
@@ -27,12 +29,25 @@ export function radum(options = {}) {
 	};
 
 	if (stylisticOptions) {
-		config.plugins.push();
+		defaultConfig.plugins.push('@stylistic/stylelint-plugin');
+		defaultConfig.rules = {
+			...defaultConfig.rules,
+			...stylistic({
+				stylistic: stylisticOptions
+			})
+		};
 	}
 
 	if (enableScss) {
-		config.plugins.push();
+		defaultConfig.plugins.push('stylelint-scss');
+		defaultConfig.customSyntax = postcssScss;
+		defaultConfig.rules = {
+			...defaultConfig.rules,
+			...scss(stylisticOptions)
+		};
 	}
 
-	return config;
+	const composer = mergeConfigs(defaultConfig, ...userConfigs);
+
+	return composer;
 }

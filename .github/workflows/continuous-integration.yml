@@ -1,5 +1,4 @@
 name: Continuous Integration
-
 on:
   pull_request:
     types:
@@ -10,20 +9,24 @@ jobs:
   test:
     name: Test
     runs-on: ${{ matrix.os }}
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+
+      - run: corepack enable
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
       - name: Install dependencies
-        run: npm i --ignore-scripts --no-audit --no-progress --prefer-offline
+        run: pnpm install
+
       - name: Test
-        run: npm run test
+        run: pnpm run test
+
     strategy:
       matrix:
-        node-version: [18]
+        node-version: [20]
         os: [ubuntu-latest]
