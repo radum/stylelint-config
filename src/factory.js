@@ -1,5 +1,5 @@
 import postcssScss from 'postcss-scss';
-import { conventions, possibleErrors, scss, stylistic } from './configs/index.js';
+import { conventions, order, possibleErrors, scss, stylistic } from './configs/index.js';
 import { mergeConfigs } from './utils.js';
 
 /**
@@ -14,14 +14,15 @@ import { mergeConfigs } from './utils.js';
  */
 export function radum(options = {}, ...userConfigs) {
 	const {
-		scss: enableScss = false
+		scss: enableScss = false,
+		order: enableOrder = false
 	} = options;
 
 	const stylisticOptions = options.stylistic === false ? false : typeof options.stylistic === 'object' ? options.stylistic : {};
 
 	/** @type {import('stylelint').Config} */
 	const defaultConfig = {
-		plugins: ['stylelint-order', 'stylelint-no-unsupported-browser-features'],
+		plugins: ['stylelint-no-unsupported-browser-features'],
 		rules: {
 			...possibleErrors(),
 			...conventions()
@@ -43,7 +44,15 @@ export function radum(options = {}, ...userConfigs) {
 		defaultConfig.customSyntax = postcssScss;
 		defaultConfig.rules = {
 			...defaultConfig.rules,
-			...scss(stylisticOptions)
+			...scss()
+		};
+	}
+
+	if (enableOrder) {
+		defaultConfig.plugins.push('stylelint-order');
+		defaultConfig.rules = {
+			...defaultConfig.rules,
+			...order()
 		};
 	}
 

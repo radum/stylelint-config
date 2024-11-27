@@ -1,3 +1,9 @@
-module.exports = {
-	'order/order': ['dollar-variables', 'custom-properties', 'declarations', 'rules']
+export function order() {
+	return {
+		'order/order': ['dollar-variables', 'custom-properties', 'declarations', 'rules'],
+		'order/properties-order': [
+			'width',
+			'height'
+		]
+	};
 };
