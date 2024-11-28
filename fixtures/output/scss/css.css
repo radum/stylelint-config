@@ -1,0 +1,141 @@
+/* Test CSS File for Linting */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f9;
+	color: #333;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+ h2,
+ h3 {
+	color: #222;
+	text-transform: uppercase;
+}
+
+a {
+	text-decoration: none;
+	color: #007acc;
+}
+
+a::hover {
+	color: #005fa3;
+}
+
+table {}
+
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	test: 1;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	background-color: #222;
+	padding: 10px 20px;
+}
+
+.navbar ul {
+	display: flex;
+	gap: 15px;
+	content: "test";
+}
+
+.navbar li {
+	list-style-type: none;
+}
+
+.navbar a {
+	color: white;
+	font-size: 1rem;
+}
+
+/* Class selectors */
+.card {
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+	box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
+/* Descendant selectors */
+.card .title {
+	font-weight: bold;
+	color: #222;
+}
+
+/* ID selector */
+#main {
+	padding: 40px;
+	background: linear-gradient(to right, #e0eafc, #cfdef3);
+}
+
+/* Media queries */
+@media screen and (width <= 768px) {
+	body {
+		font-size: 14px;
+	}
+
+	.navbar {
+		flex-direction: column;
+	}
+}
+
+@media screen and (width >= 1024px) {
+	body {
+		font-size: 18px;
+	}
+
+	.navbar a {
+		font-size: 1.2rem;
+	}
+}
+
+/* Complex selectors */
+button.primary,
+.btn-primary {
+	background-color: #007acc;
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	border-radius: 5px;
+}
+
+button.primary:hover,
+.btn-primary:hover {
+	background-color: #005fa3;
+}
+
+/* Pseudo-classes and pseudo-elements */
+input:focus {
+	border-color: #007acc;
+	outline: none;
+}
+
+::selection {
+	background-color: #007acc;
+	color: white;
+}
+
+/* Animation */
+@keyframes slide-in {
+	from {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.slide-in {
+	animation: slide-in 0.5s ease-in-out;
+}

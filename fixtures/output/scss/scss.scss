@@ -1,0 +1,158 @@
+/* Test Sass File for Linting */
+$primary-color: #007acc;
+$secondary-color: #005fa3;
+$text-color: #222;
+$font-stack: arial, sans-serif;
+
+/* Function to lighten colors */
+@function lighten-color($color, $percentage) {
+	@if $x == null {}
+
+	@return lighten($color, $percentage);
+}
+
+/* Mixin for flexbox */
+@mixin flex-center($direction: row, $gap: 0) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: center;
+	align-items: center;
+	gap: $gap;
+}
+
+body {
+	font-family: $font-stack;
+	background-color: #f4f4f9;
+	color: $text-color;
+	margin: 0;
+	padding: 0;
+
+	h1,
+	h2,
+	h3 {
+		color: $text-color;
+		text-transform: uppercase;
+	}
+
+	a {
+		text-decoration: none;
+		color: $primary-color;
+
+		&:hover {
+			color: $secondary-color;
+		}
+	}
+}
+
+.navbar {
+	@include flex-center(space-between, 15px);
+
+	background-color: $text-color;
+	padding: 10px 20px;
+
+	ul {
+		@include flex-center(row, 10px);
+
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			a {
+				color: white;
+				font-size: 1rem;
+
+				&:hover {
+					color: lighten-color($primary-color, 10%);
+				}
+			}
+		}
+	}
+}
+
+.card {
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+	box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+
+	.title {
+		font-weight: bold;
+		color: $text-color;
+	}
+}
+
+#main {
+	padding: 40px;
+	background: linear-gradient(to right, lighten-color($primary-color, 20%), lighten-color($secondary-color, 20%));
+}
+
+button {
+	&.primary,
+	&.btn-primary {
+		background-color: $primary-color;
+		border: none;
+		color: white;
+		padding: 10px 15px;
+		border-radius: 5px;
+
+		&:hover {
+			background-color: $secondary-color;
+		}
+	}
+}
+
+input:focus {
+	border-color: $primary-color;
+	outline: none;
+}
+
+::selection {
+	background-color: $primary-color;
+	color: white;
+}
+
+@keyframes slide-in {
+	from {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.slide-in {
+	animation: slide-in 0.5s ease-in-out;
+}
+
+/* Media Queries */
+@include breakpoint($size: 768px) {
+	body {
+		font-size: 14px;
+	}
+
+	.navbar {
+		flex-direction: column;
+	}
+}
+
+@include breakpoint($size: 1024px) {
+	body {
+		font-size: 18px;
+	}
+
+	.navbar a {
+		font-size: 1.2rem;
+	}
+}
+
+/* Mixin for breakpoints */
+@mixin breakpoint($size) {
+	@media screen and (max-width: $size) {
+		@content;
+	}
+}
