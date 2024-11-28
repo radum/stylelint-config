@@ -1,4 +1,8 @@
 export function conventions() {
+	// const pascalCase = '([A-Z][a-zA-Z0-9]+)'; // PascalCase
+	// const kebabCase = '([a-z][a-z0-9]*(-[a-z0-9]+)*)'; // kebab-case
+	// const camelCase = '([a-z0-9]+([A-Z][a-z0-9]+)*)'; // camelCase
+
 	return {
 		'alpha-value-notation': [
 			'percentage',
@@ -89,18 +93,44 @@ export function conventions() {
 			}
 		],
 		'selector-attribute-quotes': 'always',
+
 		'selector-class-pattern': [
-			'^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+			// Loose pattern for hyphenated BEM. This also allows simple words to be used as class names, .e.g. `.active`, `.button`.
+			// Based on:
+			// - https://github.com/postcss/postcss-bem-linter/issues/89#issuecomment-255482072
+			// - https://gist.github.com/Potherca/f2a65491e63338659c3a0d2b07eee382
+			// See also: https://github.com/simonsmith/stylelint-selector-bem-pattern.
+			// Proceed with caution if reviewing this – and use https://regexper.com.
+			/^[a-z]+(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$/,
 			{
-				message: (selector) => `Expected class selector "${selector}" to be kebab-case`
+				resolveNestedSelectors: true,
+				message: (selector) => `Expected class selector "${selector}" to be loose pattern for hyphenated BEM.`
 			}
 		],
-		'selector-id-pattern': [
-			'^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-			{
-				message: (selector) => `Expected id selector "${selector}" to be kebab-case`
-			}
-		],
+
+		// 'selector-class-pattern': [
+		// 	`^(${pascalCase}|${kebabCase})` // block
+		// 	+ `(__(${camelCase}|${kebabCase}))?` // element
+		// 	+ `(--(${camelCase}|${kebabCase}))?$`, // modifier
+		// 	{
+		// 		resolveNestedSelectors: true,
+		// 		message: 'Expect class selector to conform to BEM.'
+		// 	}
+		// ],
+
+		// 'selector-class-pattern': [
+		// 	'^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+		// 	{
+		// 		message: (selector) => `Expected class selector "${selector}" to be kebab-case`
+		// 	}
+		// ],
+		// 'selector-id-pattern': [
+		// 	'^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+		// 	{
+		// 		message: (selector) => `Expected id selector "${selector}" to be kebab-case`
+		// 	}
+		// ],
+
 		'selector-no-vendor-prefix': true,
 		'selector-not-notation': 'complex',
 		'selector-pseudo-element-colon-notation': 'double',

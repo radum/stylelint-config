@@ -1,6 +1,6 @@
 export function stylistic(options = {}) {
 	const { stylistic = true } = options;
-	const { indent = 'tab', quotes = 'double' } = typeof stylistic === 'boolean' ? {} : stylistic;
+	const { indent = 'tab', quotes = 'double', maxLineLength = 120 } = typeof stylistic === 'boolean' ? {} : stylistic;
 
 	return {
 		'@stylistic/at-rule-name-case': 'lower',
@@ -32,7 +32,7 @@ export function stylistic(options = {}) {
 		'@stylistic/function-whitespace-after': 'always',
 		'@stylistic/indentation': indent,
 		'@stylistic/max-empty-lines': 1,
-		'@stylistic/max-line-length': 120,
+		'@stylistic/max-line-length': maxLineLength,
 		'@stylistic/media-feature-colon-space-after': 'always',
 		'@stylistic/media-feature-colon-space-before': 'never',
 		'@stylistic/media-feature-name-case': 'lower',

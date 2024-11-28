@@ -3,14 +3,14 @@ import { conventions, order, possibleErrors, scss, stylistic } from './configs/i
 import { mergeConfigs } from './utils.js';
 
 /**
- * Generates a Stylelint configuration object based on the provided options.
+ * Generates a Stylelint configuration object based on the provided options and user configurations.
  *
- * @param {object} options - The options to configure the Stylelint configuration.
- * @param {boolean} [options.scss] - Whether to enable SCSS support.
- * @param {boolean | object} [options.stylistic] - Stylistic options for the configuration.
- * If false, stylistic rules are disabled. If an object, it contains specific stylistic rules.
- *
- * @returns {import('stylelint').Config} The generated Stylelint configuration object.
+ * @param {object} [options] - Configuration options.
+ * @param {boolean} [options.scss] - Enable SCSS support.
+ * @param {boolean} [options.order] - Enable order rules.
+ * @param {boolean | object} [options.stylistic] - Enable stylistic rules or provide specific stylistic options.
+ * @param {...object} userConfigs - Additional user configurations to merge with the default configuration.
+ * @returns {import('stylelint').Config} - The generated Stylelint configuration object.
  */
 export function radum(options = {}, ...userConfigs) {
 	const {
@@ -47,6 +47,14 @@ export function radum(options = {}, ...userConfigs) {
 		defaultConfig.customSyntax = postcssScss;
 		defaultConfig.rules = {
 			...defaultConfig.rules,
+			// Doiuse and this plugin are only compatible with standard css syntax,
+			// so syntaxes like scss, less and others aren't supported.
+			// So we are disabling the plugin for the css-nesting feature.
+			// TODO: Explore using: https://stylelint.io/user-guide/configure/#overrides
+			'plugin/no-unsupported-browser-features': [true, {
+				ignore: ['css-nesting'],
+				severity: 'warning'
+			}],
 			...scss()
 		};
 	}

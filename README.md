@@ -12,8 +12,10 @@ Use it as is or as a foundation for your own config. You can extend or clone and
 	- [Usage](#usage)
 		- [Installation](#installation)
 		- [Extending the config](#extending-the-config)
+			- [Stylistic](#stylistic)
 		- [Provide a defineConfig function for stylelint.config.js files](#provide-a-defineconfig-function-for-stylelintconfigjs-files)
 	- [Complementary tools](#complementary-tools)
+		- [Stylelint configs and plugins used](#stylelint-configs-and-plugins-used)
 		- [Editor plugins](#editor-plugins)
 		- [Find stylelint rules](#find-stylelint-rules)
 	- [Changelog](#changelog)
@@ -82,6 +84,27 @@ export default radum(
 
 This will disable the `scss/at-if-no-null` rule and enable the `scss` and `order` rules + their own plugins.
 
+#### Stylistic
+
+The stylistic rules are based on the [@stylistic/stylelint-plugin](https://github.com/stylelint-stylistic/stylelint-stylistic) plugin and are enabled by default.
+
+In order to customize the stylistic rules, you can disable them by setting the `stylistic` option to `false` and then add the rules you want to enable or pass an object.
+
+```js
+// stylelint.config.js
+import radum from '@radum/stylelint-config';
+
+export default radum(
+	{
+		stylistic: {
+			indent: 'tab',
+			quotes: 'double',
+			maxLineLength: 120
+		}
+	}
+);
+```
+
 ### Provide a defineConfig function for stylelint.config.js files
 
 If you are using the [stylelint-define-config](https://github.com/stylelint-types/stylelint-define-config) package, you can provide a function that will be used to define the config.
@@ -106,6 +129,17 @@ export default radum({
 ```
 
 ## Complementary tools
+
+### Stylelint configs and plugins used
+
+- https://github.com/stylelint/stylelint-config-recommended
+- https://github.com/stylelint/stylelint-config-standard
+- https://github.com/stylelint-scss/stylelint-config-recommended-scss
+- https://github.com/stylelint-scss/stylelint-config-standard-scss
+- https://github.com/stylelint-stylistic/stylelint-stylistic
+
+- https://github.com/stylelint-scss/stylelint-scss
+- https://github.com/hudochenkov/stylelint-order
 
 ### Editor plugins
 
