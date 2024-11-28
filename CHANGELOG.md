@@ -1,3 +1,20 @@
+# v7.1.0 (Thu Nov 28 2024)
+
+#### 🚀 Enhancement
+
+- Enhance documentation and configuration for Stylelint [#84](https://github.com/radum/stylelint-config/pull/84) ([@radum](https://github.com/radum))
+
+#### 🔩 Dependency Updates
+
+- Bump actions/setup-node from 3 to 4 [#81](https://github.com/radum/stylelint-config/pull/81) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v7.0.0 (Thu Nov 28 2024)
 
 #### 💥 Breaking Change
