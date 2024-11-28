@@ -1,3 +1,15 @@
+# v7.0.0 (Thu Nov 28 2024)
+
+#### 💥 Breaking Change
+
+- Stylelint v16 [#83](https://github.com/radum/stylelint-config/pull/83) ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v6.1.2 (Wed Sep 06 2023)
 
 #### 🐛 Bug Fix
