@@ -68,12 +68,14 @@ export function conventions() {
 		'hue-degree-notation': 'angle',
 		'import-notation': 'url',
 		'keyframe-selector-notation': 'percentage-unless-within-keyword-only-block',
-		'keyframes-name-pattern': [
-			'^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-			{
-				message: (name) => `Expected keyframe name "${name}" to be kebab-case`
-			}
-		],
+
+		// 'keyframes-name-pattern': [
+		// 	'^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+		// 	{
+		// 		message: (name) => `Expected keyframe name "${name}" to be kebab-case`
+		// 	}
+		// ],
+
 		'length-zero-no-unit': [
 			true,
 			{
