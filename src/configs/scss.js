@@ -79,12 +79,14 @@ export function scss() {
 				ignore: ['after-comment', 'inside-single-line-block']
 			}
 		],
-		'scss/dollar-variable-pattern': [
-			'^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-			{
-				message: 'Expected variable to be kebab-case'
-			}
-		],
+
+		// 'scss/dollar-variable-pattern': [
+		// 	'^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+		// 	{
+		// 		message: 'Expected variable to be kebab-case'
+		// 	}
+		// ],
+
 		'scss/double-slash-comment-empty-line-before': [
 			'always',
 			{

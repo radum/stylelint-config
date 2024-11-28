@@ -37,7 +37,8 @@ export function radum(options = {}, ...userConfigs) {
 		defaultConfig.rules = {
 			...defaultConfig.rules,
 			...stylistic({
-				stylistic: stylisticOptions
+				stylistic: stylisticOptions,
+				enableScss
 			})
 		};
 	}
@@ -49,10 +50,10 @@ export function radum(options = {}, ...userConfigs) {
 			...defaultConfig.rules,
 			// Doiuse and this plugin are only compatible with standard css syntax,
 			// so syntaxes like scss, less and others aren't supported.
-			// So we are disabling the plugin for the css-nesting feature.
+			// So we are disabling the plugin for some Sass syntax features.
 			// TODO: Explore using: https://stylelint.io/user-guide/configure/#overrides
 			'plugin/no-unsupported-browser-features': [true, {
-				ignore: ['css-nesting'],
+				ignore: ['css-nesting', 'css-when-else'],
 				severity: 'warning'
 			}],
 			...scss()
