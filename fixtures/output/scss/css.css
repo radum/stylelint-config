@@ -4,10 +4,12 @@ body {
 	background-color: #f4f4f9;
 	color: #333;
 	margin: 0;
-    padding: 0;
+	padding: 0;
 }
 
-h1, h2, h3 {
+h1,
+ h2,
+ h3 {
 	color: #222;
 	text-transform: uppercase;
 }
@@ -31,7 +33,7 @@ ol {
 	test: 1;
 }
 
-.navbar{
+.navbar {
 	display: flex;
 	justify-content: space-between;
 	background-color: #222;
@@ -41,7 +43,7 @@ ol {
 .navbar ul {
 	display: flex;
 	gap: 15px;
-	content: 'test';
+	content: "test";
 }
 
 .navbar li {
@@ -59,7 +61,7 @@ ol {
 	border: 1px solid #ddd;
 	border-radius: 5px;
 	padding: 20px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 }
 
 /* Descendant selectors */
@@ -75,7 +77,7 @@ ol {
 }
 
 /* Media queries */
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
 	body {
 		font-size: 14px;
 	}
@@ -85,7 +87,7 @@ ol {
 	}
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (width >= 1024px) {
 	body {
 		font-size: 18px;
 	}

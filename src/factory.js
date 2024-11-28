@@ -24,6 +24,9 @@ export function radum(options = {}, ...userConfigs) {
 	const defaultConfig = {
 		plugins: ['stylelint-no-unsupported-browser-features'],
 		rules: {
+			'plugin/no-unsupported-browser-features': [true, {
+				severity: 'warning'
+			}],
 			...possibleErrors(),
 			...conventions()
 		}

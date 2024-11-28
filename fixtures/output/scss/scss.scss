@@ -2,7 +2,7 @@
 $primary-color: #007acc;
 $secondary-color: #005fa3;
 $text-color: #222;
-$font-stack: Arial, sans-serif;
+$font-stack: arial, sans-serif;
 
 /* Function to lighten colors */
 @function lighten-color($color, $percentage) {
@@ -17,7 +17,7 @@ $font-stack: Arial, sans-serif;
 	flex-direction: $direction;
 	justify-content: center;
 	align-items: center;
-    gap: $gap;
+	gap: $gap;
 }
 
 body {
@@ -46,11 +46,13 @@ body {
 
 .navbar {
 	@include flex-center(space-between, 15px);
+
 	background-color: $text-color;
 	padding: 10px 20px;
 
 	ul {
 		@include flex-center(row, 10px);
+
 		list-style: none;
 		margin: 0;
 		padding: 0;
@@ -73,7 +75,7 @@ body {
 	border: 1px solid #ddd;
 	border-radius: 5px;
 	padding: 20px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 
 	.title {
 		font-weight: bold;
@@ -87,7 +89,6 @@ body {
 }
 
 button {
-
 	&.primary,
 	&.btn-primary {
 		background-color: $primary-color;

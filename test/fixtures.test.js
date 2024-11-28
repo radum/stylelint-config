@@ -1,9 +1,7 @@
-/* eslint-disable no-console */
 import { join, resolve } from 'node:path';
 import { execa } from 'execa';
 import fg from 'fast-glob';
 import fs from 'fs-extra';
-// import stylelint from 'stylelint';
 import { afterAll, beforeAll, it } from 'vitest';
 
 beforeAll(async () => {
@@ -14,13 +12,11 @@ afterAll(async () => {
 	await fs.rm('_fixtures', { recursive: true, force: true });
 });
 
-runWithConfig('css', {
-	stylistic: false
-}, 'css');
+runWithConfig('css', {}, 'css');
 
-// runWithConfig('scss', {
-// 	stylistic: false
-// }, 'css|scss');
+runWithConfig('scss', {
+	scss: true
+}, '(css|scss)');
 
 function runWithConfig(name, configs, fileTypes, ...items) {
 	it.concurrent(
@@ -43,19 +39,22 @@ import radum from '@radum/stylelint-config'
 
 export default radum(
 	${JSON.stringify(configs)},
-	...${JSON.stringify(items) ?? []},
+	...${JSON.stringify(items) ?? {}},
 )
 	`
 			);
 
-			// await execa('npx', ['stylelint', '.', '--fix'], {
-			const { stdout, stderr } = await execa('npx', ['stylelint', `"**/*.(${fileTypes})"`, '--fix', '--formatter=json'], {
+			const { stderr } = await execa('npx', ['stylelint', `**/*.${fileTypes}`, '--fix', '--formatter=json'], {
 				cwd: target,
-				stdio: 'pipe'
+				stdio: 'pipe',
+				reject: false
 			});
 
-			console.log(stdout);
-			console.log(JSON.parse(stderr.trim()));
+			const stylelintOutput = JSON.parse(stderr.trim());
+
+			// console.log(JSON.stringify(stylelintOutput[0].warnings, null, 2));
+			expect(stylelintOutput[0].errored).toBe(true);
+			expect(stylelintOutput[0].warnings.length).toBeGreaterThan(0);
 
 			const files = await fg('**/*', {
 				ignore: ['node_modules', 'stylelint.config.js'],

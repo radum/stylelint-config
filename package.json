@@ -43,7 +43,6 @@
   "dependencies": {
     "@stylistic/stylelint-plugin": "^3.1.1",
     "postcss-scss": "^4.0.9",
-    "stylelint-define-config": "^1.7.0",
     "stylelint-no-unsupported-browser-features": "^8.0.2",
     "stylelint-order": "^6.0.4",
     "stylelint-scss": "^6.10.0"
@@ -54,6 +53,9 @@
     "@auto-it/npm": "^11.3.0",
     "@auto-it/released": "^11.3.0",
     "@radum/eslint-config": "^8.1.0",
+    "@stylelint-types/stylelint-order": "^6.0.4",
+    "@stylelint-types/stylelint-scss": "^6.5.0",
+    "@stylelint-types/stylelint-stylistic": "^3.0.1",
     "auto": "^11.3.0",
     "eslint": "^9.15.0",
     "fast-glob": "^3.3.2",
@@ -61,6 +63,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
     "stylelint": "^16.10.0",
+    "stylelint-define-config": "^1.7.0",
     "vitest": "^2.1.6"
   },
   "lint-staged": {

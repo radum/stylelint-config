@@ -9,134 +9,113 @@ It turns on all the possible errors rules within stylelint based on my own CSS s
 Use it as is or as a foundation for your own config. You can extend or clone and change.
 
 - [@radum Stylelint config](#radum-stylelint-config)
-	- [Installation](#installation)
 	- [Usage](#usage)
-		- [Stylelint no unsupported browser features](#stylelint-no-unsupported-browser-features)
-		- [Stylelint pattern rules](#stylelint-pattern-rules)
+		- [Installation](#installation)
 		- [Extending the config](#extending-the-config)
+		- [Provide a defineConfig function for stylelint.config.js files](#provide-a-defineconfig-function-for-stylelintconfigjs-files)
 	- [Complementary tools](#complementary-tools)
 		- [Editor plugins](#editor-plugins)
-		- [Editors](#editors)
 		- [Find stylelint rules](#find-stylelint-rules)
 	- [Changelog](#changelog)
 
-## Installation
-
-```bash
-pnpm install -D @radum/stylelint-config stylelint stylelint-define-config
-```
+> [!WARNING]
+> Please keep in mind that this is **_a personal config_** with a lot opinions. Changes might not always be pleased by everyone and every use cases.
+>
+> If you are using this config directly, I'd suggest you **review the changes everytime you update**. Or if you want more control over the rules, always feel free to fork it. Thanks!
 
 ## Usage
 
-This package includes the following configurations:
-
-- @radum/stylelint-config - The base code style guide.
-- @radum/stylelint-config/scss - To be used in addition to "@radum/stylelint-config" configuration by projects that use Sass.
-
-If you've installed `@radum/stylelint-config` locally within your project, just set your stylelint config to:
+### Installation
 
 ```bash
-{
-  "extends": "@radum/stylelint-config"
-}
+pnpm install -D @radum/stylelint-config stylelint
+```
+
+And create stylelint.config.js in your project root:
+
+```js
+import radum from '@radum/stylelint-config';
+
+export default radum();
 ```
 
 or if you are working on a Scss file:
 
-```json
-{
-  "extends": [
-    "@radum/stylelint-config"
-    "@radum/stylelint-config/scss"
-  ]
-}
+```js
+import radum from '@radum/stylelint-config';
+
+export default radum({
+	scss: true
+});
 ```
 
-> This will also set `"customSyntax": "postcss-scss"`.
-
-If you've globally installed @radum/stylelint-config using the -g flag, then you'll need to use the absolute path to @radum/stylelint-config in your config e.g.
-
-```bash
-{
-  "extends": "/absolute/path/to/@radum/stylelint-config"
-}
-```
-
-You can also simply use the globally installed configuration name instead of the absolute path:
-
-{
-  "extends": "@radum/stylelint-config"
-}
-
-### Stylelint no unsupported browser features
-
-Although `stylelint-no-unsupported-browser-features` is installed is not enforced. You should add your own specific settings.
-
-For example:
-
-```json
-"rules": {
-	"plugin/no-unsupported-browser-features": [true, {
-		"browsers": [
-			"last 2 Chrome versions",
-			"last 2 Safari versions",
-			"last 1 iOS versions",
-			"last 2 Firefox versions",
-			"last 2 Edge versions"
-		],
-		"severity": "warning"
-	}]
-}
-```
-
-### Stylelint pattern rules
-
-If you need to enforce naming conventions with pattern rules.
-
-```json
-{
-  "extends": [
-    "@radum/stylelint-config"
-    "@radum/stylelint-config/patterns"
-  ]
-}
-```
+This will set the `customSyntax` to `postcss-scss` and add the `stylelint-scss` plugin + all my rules.
 
 ### Extending the config
 
-Simply add a "rules" key to your config, then add your overrides and additions there.
+The first argument is an object with the following options:
 
-For example, to change the at-rule-no-unknown rule to use its ignoreAtRules option, turn off the block-no-empty rule, and add the unit-allowed-list rule:
+- `sccs`: boolean - Enable SCSS rules. Default is false.
+- `stylistic`: boolean - Enable stylistic rules. Default is true.
+- `order`: boolean - Enable order rules. Default is false.
 
-```json
-{
-	"extends": "@radum/stylelint-config",
-	"rules": {
-		"at-rule-no-unknown": [true, {
-			"ignoreAtRules": [
-				"extends"
-			]
-		}],
-		"block-no-empty": null,
-		"unit-allowed-list": ["em", "rem", "s"]
+The second argument is an Stylelint config object. You can use it to disable or enable rules. Add new plugins or change the default settings.
+This will be merged with the default config.
+
+```js
+// stylelint.config.js
+import radum from '@radum/stylelint-config';
+
+export default radum(
+	{
+		scss: true,
+		stylistic: false,
+		order: true,
+	},
+	{
+		rules: {
+			'scss/at-if-no-null': null,
+		},
 	}
-}
+);
+```
+
+This will disable the `scss/at-if-no-null` rule and enable the `scss` and `order` rules + their own plugins.
+
+### Provide a defineConfig function for stylelint.config.js files
+
+If you are using the [stylelint-define-config](https://github.com/stylelint-types/stylelint-define-config) package, you can provide a function that will be used to define the config.
+
+```bash
+pnpm install -D stylelint-define-config @stylelint-types/stylelint-scss @stylelint-types/stylelint-stylistic @stylelint-types/stylelint-order
+```
+
+```js
+import radum from '@radum/stylelint-config';
+import { defineConfig } from 'stylelint-define-config';
+
+/// <reference types="@stylelint-types/stylelint-scss">
+
+export default radum({
+	scss: true
+}, defineConfig({
+	rules: {
+		'property-no-unknown': null
+	}
+}));
 ```
 
 ## Complementary tools
 
 ### Editor plugins
 
--   [Ale](https://github.com/w0rp/ale): A Vim plugin that supports stylelint.
--   [Flycheck](https://github.com/flycheck/flycheck): An Emacs extension that supports stylelint.
--   [linter-stylelint](https://github.com/AtomLinter/linter-stylelint): An Atom plugin for stylelint.
--   [SublimeLinter-stylelint](https://github.com/SublimeLinter/SublimeLinter-stylelint): A Sublime Text plugin for stylelint.
--   [SublimeLinter-contrib-stylelint_d](https://github.com/jo-sm/SublimeLinter-contrib-stylelint_d): A Sublime Text plugin for stylelint that run's on daemon.
--   [vscode-stylelint](https://github.com/shinnn/vscode-stylelint): A Visual Studio Code extension for stylelint.
-
-### Editors
-
--   [WebStorm](https://blog.jetbrains.com/webstorm/2016/09/webstorm-2016-3-eap-163-4830-stylelint-usages-for-default-exports-and-more/): Version 2016.3 onwards has built-in support for stylelint.
+- [Ale](https://github.com/w0rp/ale): A Vim plugin that supports stylelint.
+- [Flycheck](https://github.com/flycheck/flycheck): An Emacs extension that supports stylelint.
+- [linter-stylelint](https://github.com/AtomLinter/linter-stylelint): An Atom plugin for stylelint.
+- [SublimeLinter-stylelint](https://github.com/SublimeLinter/SublimeLinter-stylelint): A Sublime Text plugin for stylelint.
+- [SublimeLinter-contrib-stylelint_d](https://github.com/jo-sm/SublimeLinter-contrib-stylelint_d): A Sublime Text plugin for stylelint that run's on daemon.
+- [vscode-stylelint](https://github.com/shinnn/vscode-stylelint): A Visual Studio Code extension for stylelint.
+- [WebStorm](https://blog.jetbrains.com/webstorm/2016/09/webstorm-2016-3-eap-163-4830-stylelint-usages-for-default-exports-and-more/): Version 2016.3 onwards has built-in support for stylelint.
 
 ### Find stylelint rules
 
