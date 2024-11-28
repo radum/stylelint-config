@@ -1,3 +1,15 @@
+# v7.2.0 (Thu Nov 28 2024)
+
+#### 🚀 Enhancement
+
+- Refactor Stylelint configuration: disable kebab-case patterns and update package dependencies [#85](https://github.com/radum/stylelint-config/pull/85) ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v7.1.0 (Thu Nov 28 2024)
 
 #### 🚀 Enhancement
