@@ -1,113 +1,81 @@
-const fs = require('fs');
-const stylelint = require('stylelint');
+/* eslint-disable no-console */
+import { join, resolve } from 'node:path';
+import { execa } from 'execa';
+import fg from 'fast-glob';
+import fs from 'fs-extra';
+// import stylelint from 'stylelint';
+import { afterAll, beforeAll, it } from 'vitest';
 
-const validCss = fs.readFileSync('./tests/css-valid.css', 'utf-8');
-const invalidCss = fs.readFileSync('./tests/css-invalid.css', 'utf-8');
-const validScss = fs.readFileSync('./tests/scss-valid.scss', 'utf-8');
-const invalidScss = fs.readFileSync('./tests/scss-invalid.scss', 'utf-8');
-
-describe('flags no warnings with valid css', () => {
-	let result;
-
-	beforeEach(() => {
-		result = stylelint.lint({
-			code: validCss,
-			config: {
-				extends: ['./index.js']
-			}
-		});
-	});
-
-	it('did not error', () => {
-		return result.then((data) => expect(data.errored).toBeFalsy());
-	});
-
-	it('flags no warnings', () => {
-		return result.then((data) => expect(data.results[0].warnings).toHaveLength(0));
-	});
+beforeAll(async () => {
+	await fs.rm('_fixtures', { recursive: true, force: true });
 });
 
-describe('flags warnings with invalid css', () => {
-	let result;
-
-	beforeEach(() => {
-		result = stylelint.lint({
-			code: invalidCss,
-			config: {
-				extends: ['./index.js']
-			}
-		});
-	});
-
-	it('did error', () => {
-		return result.then((data) => expect(data.errored).toBeTruthy());
-	});
-
-	it('flags 2 warnings', () => {
-		return result.then((data) => expect(data.results[0].warnings).toHaveLength(4));
-	});
-
-	it('correct warning text', () => {
-		return result.then((data) => expect(data.results[0].warnings[0].text).toBe('Unexpected empty block (block-no-empty)'));
-	});
-
-	it('correct rule flagged', () => {
-		return result.then((data) => expect(data.results[0].warnings[0].rule).toBe('block-no-empty'));
-	});
-
-	it('correct severity flagged', () => {
-		return result.then((data) => expect(data.results[0].warnings[0].severity).toBe('error'));
-	});
-
-	it('correct line number', () => {
-		return result.then((data) => expect(data.results[0].warnings[0].line).toBe(7));
-	});
-
-	it('correct column number', () => {
-		return result.then((data) => expect(data.results[0].warnings[0].column).toBe(8));
-	});
+afterAll(async () => {
+	await fs.rm('_fixtures', { recursive: true, force: true });
 });
 
-describe('flags no warnings with valid scss', () => {
-	let result;
+runWithConfig('css', {
+	stylistic: false
+}, 'css');
 
-	beforeEach(() => {
-		result = stylelint.lint({
-			code: validScss,
-			config: {
-				extends: ['./index.js', './scss.js'],
-				customSyntax: 'postcss-scss'
-			}
-		});
-	});
+// runWithConfig('scss', {
+// 	stylistic: false
+// }, 'css|scss');
 
-	it('did not error', () => {
-		return result.then((data) => expect(data.errored).toBeFalsy());
-	});
+function runWithConfig(name, configs, fileTypes, ...items) {
+	it.concurrent(
+		name,
+		async ({ expect }) => {
+			const from = resolve('fixtures/input');
+			const output = resolve('fixtures/output', name);
+			const target = resolve('_fixtures', name);
 
-	it('flags no warnings', () => {
-		return result.then((data) => expect(data.results[0].warnings).toHaveLength(0));
-	});
-});
+			await fs.copy(from, target, {
+				filter: (src) => {
+					return !src.includes('node_modules');
+				}
+			});
+			await fs.writeFile(
+				join(target, 'stylelint.config.js'),
+				`
+// @eslint-disable
+import radum from '@radum/stylelint-config'
 
-describe('flags no warnings with invalid scss', () => {
-	let result;
+export default radum(
+	${JSON.stringify(configs)},
+	...${JSON.stringify(items) ?? []},
+)
+	`
+			);
 
-	beforeEach(() => {
-		result = stylelint.lint({
-			code: invalidScss,
-			config: {
-				extends: ['./index.js', './scss.js'],
-				customSyntax: 'postcss-scss'
-			}
-		});
-	});
+			// await execa('npx', ['stylelint', '.', '--fix'], {
+			const { stdout, stderr } = await execa('npx', ['stylelint', `"**/*.(${fileTypes})"`, '--fix', '--formatter=json'], {
+				cwd: target,
+				stdio: 'pipe'
+			});
 
-	it('did error', () => {
-		return result.then((data) => expect(data.errored).toBeTruthy());
-	});
+			console.log(stdout);
+			console.log(JSON.parse(stderr.trim()));
 
-	it('flags 1 warning', () => {
-		return result.then((data) => expect(data.results[0].warnings).toHaveLength(1));
-	});
-});
+			const files = await fg('**/*', {
+				ignore: ['node_modules', 'stylelint.config.js'],
+				cwd: target
+			});
+
+			await Promise.all(
+				files.map(async (file) => {
+					const content = await fs.readFile(join(target, file), 'utf-8');
+					const source = await fs.readFile(join(from, file), 'utf-8');
+					const outputPath = join(output, file);
+					if (content === source) {
+						if (fs.existsSync(outputPath))
+							await fs.remove(outputPath);
+						return;
+					}
+					await expect.soft(content).toMatchFileSnapshot(join(output, file));
+				})
+			);
+		},
+		30_000
+	);
+}

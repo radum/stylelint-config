@@ -1,6 +1,8 @@
 import radum from './src/index.js';
 
-export default radum();
+export default radum({
+	scss: true
+});
 
 // import { defineConfig } from 'stylelint-define-config';
 
