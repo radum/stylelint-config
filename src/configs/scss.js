@@ -1,4 +1,4 @@
-import { camelCase } from './utils';
+import { camelCase } from './../utils.js';
 
 export function scss() {
 	return {
