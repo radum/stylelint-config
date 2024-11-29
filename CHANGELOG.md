@@ -1,3 +1,15 @@
+# v7.3.1 (Fri Nov 29 2024)
+
+#### 🐛 Bug Fix
+
+- Fix import error [#87](https://github.com/radum/stylelint-config/pull/87) ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v7.3.0 (Fri Nov 29 2024)
 
 #### 🚀 Enhancement
