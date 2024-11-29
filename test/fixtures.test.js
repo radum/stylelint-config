@@ -50,7 +50,14 @@ export default radum(
 				reject: false
 			});
 
-			const stylelintOutput = JSON.parse(stderr.trim());
+			let stylelintOutput;
+			try {
+				stylelintOutput = JSON.parse(stderr.trim());
+			}
+			catch {
+				console.log('Parse error');
+				console.error(stderr);
+			}
 
 			// console.log(JSON.stringify(stylelintOutput[0].warnings, null, 2));
 			expect(stylelintOutput[0].errored).toBe(true);
