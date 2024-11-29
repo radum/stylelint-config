@@ -1,8 +1,6 @@
-export function conventions() {
-	// const pascalCase = '([A-Z][a-zA-Z0-9]+)'; // PascalCase
-	// const kebabCase = '([a-z][a-z0-9]*(-[a-z0-9]+)*)'; // kebab-case
-	// const camelCase = '([a-z0-9]+([A-Z][a-z0-9]+)*)'; // camelCase
+// import { pascalCase, kebabCase, camelCase } from './utils';
 
+export function conventions() {
 	return {
 		'alpha-value-notation': [
 			'percentage',
@@ -69,6 +67,7 @@ export function conventions() {
 		'import-notation': 'url',
 		'keyframe-selector-notation': 'percentage-unless-within-keyword-only-block',
 
+		// TODO: I'm not sure about this one. To be or not to be?
 		// 'keyframes-name-pattern': [
 		// 	'^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
 		// 	{
@@ -96,6 +95,7 @@ export function conventions() {
 		],
 		'selector-attribute-quotes': 'always',
 
+		// Option 1
 		'selector-class-pattern': [
 			// Loose pattern for hyphenated BEM. This also allows simple words to be used as class names, .e.g. `.active`, `.button`.
 			// Based on:
@@ -110,6 +110,7 @@ export function conventions() {
 			}
 		],
 
+		// Option 2
 		// 'selector-class-pattern': [
 		// 	`^(${pascalCase}|${kebabCase})` // block
 		// 	+ `(__(${camelCase}|${kebabCase}))?` // element
@@ -120,18 +121,20 @@ export function conventions() {
 		// 	}
 		// ],
 
+		// Option 3
 		// 'selector-class-pattern': [
 		// 	'^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
 		// 	{
 		// 		message: (selector) => `Expected class selector "${selector}" to be kebab-case`
 		// 	}
 		// ],
-		// 'selector-id-pattern': [
-		// 	'^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-		// 	{
-		// 		message: (selector) => `Expected id selector "${selector}" to be kebab-case`
-		// 	}
-		// ],
+
+		'selector-id-pattern': [
+			/^[a-z]+(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$/,
+			{
+				message: (selector) => `Expected id selector "${selector}" to be loose pattern for hyphenated BEM.`
+			}
+		],
 
 		'selector-no-vendor-prefix': true,
 		'selector-not-notation': 'complex',

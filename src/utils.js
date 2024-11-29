@@ -1,3 +1,7 @@
+export const pascalCase = '([A-Z][a-zA-Z0-9]+)'; // PascalCase
+export const kebabCase = '([a-z][a-z0-9]*(-[a-z0-9]+)*)'; // kebab-case
+export const camelCase = '([a-z0-9]+([A-Z][a-z0-9]+)*)'; // camelCase
+
 /**
  * Merge multiple flat configs into a single flat config.
  *
