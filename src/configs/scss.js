@@ -1,3 +1,5 @@
+import { camelCase } from './utils';
+
 export function scss() {
 	return {
 		'annotation-no-unknown': null,
@@ -53,12 +55,23 @@ export function scss() {
 		'scss/at-else-empty-line-before': 'never',
 		'scss/at-else-if-parentheses-space-before': 'always',
 		'scss/at-function-parentheses-space-before': 'never',
+
+		// Option 1
 		'scss/at-function-pattern': [
-			'^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+			`^${camelCase}*$`,
 			{
-				message: 'Expected function name to be kebab-case'
+				message: 'Expected function name to be camelCase'
 			}
 		],
+
+		// Option 2
+		// 'scss/at-function-pattern': [
+		// 	'^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+		// 	{
+		// 		message: 'Expected function name to be kebab-case'
+		// 	}
+		// ],
+
 		'scss/at-if-closing-brace-newline-after': 'always-last-in-chain',
 		'scss/at-if-closing-brace-space-after': 'always-intermediate',
 		'scss/at-mixin-argumentless-call-parentheses': 'never',
