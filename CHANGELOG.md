@@ -1,3 +1,15 @@
+# v7.3.0 (Fri Nov 29 2024)
+
+#### 🚀 Enhancement
+
+- Refactor naming conventions: add regex patterns for PascalCase, kebab-case, and camelCase; update SCSS function pattern to use camelCase [#86](https://github.com/radum/stylelint-config/pull/86) ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v7.2.0 (Thu Nov 28 2024)
 
 #### 🚀 Enhancement
