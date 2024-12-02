@@ -23,7 +23,7 @@ export function conventions() {
 		],
 		'at-rule-no-vendor-prefix': true,
 		'color-function-notation': 'modern',
-		'color-hex-length': 'short',
+		'color-hex-length': 'long',
 		'comment-empty-line-before': [
 			'always',
 			{
