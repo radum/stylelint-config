@@ -1,3 +1,19 @@
+# v7.4.0 (Mon Dec 02 2024)
+
+#### 🚀 Enhancement
+
+- Updated some rules [#91](https://github.com/radum/stylelint-config/pull/91) ([@radum](https://github.com/radum))
+
+#### ⚠️ Pushed to `main`
+
+- Bump deps ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v7.3.2 (Mon Dec 02 2024)
 
 #### 🐛 Bug Fix
