@@ -12,10 +12,12 @@ npm-debug.log
 .eslintcache
 .sass-cache
 .tmp
+dist
 
-# local env files
+# Env settings / local env files
 .env
-.env*.local
+.env.local
+.env.*.local
 
 # Code coverage
 coverage
@@ -23,4 +25,11 @@ coverage
 .coverage
 
 # Editors
-.vscode
+.vscode/*
+!.vscode/settings.json
+
+# TEMP
+_fixtures
+.temp
+TEMP
+.history

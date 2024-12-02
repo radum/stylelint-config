@@ -16,21 +16,25 @@
   ],
   "exports": {
     ".": {
-      "import": "./src/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
   "files": [
     "CHANGELOG.md",
     "LICENSE.md",
     "README.md",
+    "dist",
     "src"
   ],
   "engines": {
     "node": ">=18"
   },
   "scripts": {
+    "build": "tsup --format esm,cjs --clean --dts",
     "lint:js": "eslint '**/*.js'",
+    "prepack": "pnpm build",
     "test": "vitest",
     "prepare": "husky"
   },
@@ -64,6 +68,7 @@
     "lint-staged": "^15.2.10",
     "stylelint": "^16.11.0",
     "stylelint-define-config": "^1.7.0",
+    "tsup": "^8.3.5",
     "vitest": "^2.1.6"
   },
   "lint-staged": {
