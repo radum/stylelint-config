@@ -13,7 +13,7 @@ export function stylistic(options = {}) {
 		'@stylistic/block-opening-brace-newline-after': 'always-multi-line',
 		'@stylistic/block-opening-brace-space-after': 'always-single-line',
 		'@stylistic/block-opening-brace-space-before': 'always',
-		'@stylistic/color-hex-case': 'lower',
+		'@stylistic/color-hex-case': 'upper',
 		'@stylistic/declaration-bang-space-after': 'never',
 		'@stylistic/declaration-bang-space-before': 'always',
 		'@stylistic/declaration-block-semicolon-newline-after': 'always-multi-line',

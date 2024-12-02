@@ -1,24 +1,24 @@
 /* Test CSS File for Linting */
 body {
 	font-family: Arial, sans-serif;
-	background-color: #f4f4f9;
-	color: #333;
+	background-color: #F4F4F9;
+	color: #333333;
 	margin: 0;
     padding: 0;
 }
 
 h1, h2, h3 {
-	color: #222;
+	color: #222222;
 	text-transform: uppercase;
 }
 
 a {
 	text-decoration: none;
-	color: #007acc;
+	color: #007ACC;
 }
 
 a::hover {
-	color: #005fa3;
+	color: #005FA3;
 }
 
 table {}
@@ -34,7 +34,7 @@ ol {
 .navbar{
 	display: flex;
 	justify-content: space-between;
-	background-color: #222;
+	background-color: #222222;
 	padding: 10px 20px;
 }
 
@@ -56,7 +56,7 @@ ol {
 /* Class selectors */
 .card {
 	background-color: white;
-	border: 1px solid #ddd;
+	border: 1px solid #DDDDDD;
 	border-radius: 5px;
 	padding: 20px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -65,13 +65,13 @@ ol {
 /* Descendant selectors */
 .card .title {
 	font-weight: bold;
-	color: #222;
+	color: #222222;
 }
 
 /* ID selector */
 #main {
 	padding: 40px;
-	background: linear-gradient(to right, #e0eafc, #cfdef3);
+	background: linear-gradient(to right, #E0EAFC, #CFDEF3);
 }
 
 /* Media queries */
@@ -98,7 +98,7 @@ ol {
 /* Complex selectors */
 button.primary,
 .btn-primary {
-	background-color: #007acc;
+	background-color: #007ACC;
 	border: none;
 	color: white;
 	padding: 10px 15px;
@@ -107,7 +107,7 @@ button.primary,
 
 button.primary:hover,
 .btn-primary:hover {
-	background-color: #005fa3;
+	background-color: #005FA3;
 }
 
 /* Pseudo-classes and pseudo-elements */
@@ -117,7 +117,7 @@ input:focus {
 }
 
 ::selection {
-	background-color: #007acc;
+	background-color: #007ACC;
 	color: white;
 }
 

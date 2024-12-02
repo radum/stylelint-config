@@ -74,7 +74,7 @@ export function scss() {
 
 		'scss/at-if-closing-brace-newline-after': 'always-last-in-chain',
 		'scss/at-if-closing-brace-space-after': 'always-intermediate',
-		'scss/at-mixin-argumentless-call-parentheses': 'never',
+		'scss/at-mixin-argumentless-call-parentheses': 'always',
 		'scss/at-mixin-parentheses-space-before': 'never',
 		'scss/at-mixin-pattern': [
 			'^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$',
@@ -82,7 +82,7 @@ export function scss() {
 				message: 'Expected mixin name to be kebab-case'
 			}
 		],
-		'scss/at-rule-conditional-no-parentheses': true,
+		'scss/at-rule-conditional-no-parentheses': null,
 		'scss/dollar-variable-colon-space-after': 'always-single-line',
 		'scss/dollar-variable-colon-space-before': 'never',
 		'scss/dollar-variable-empty-line-before': [
