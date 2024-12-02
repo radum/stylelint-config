@@ -2,7 +2,7 @@
   "name": "@radum/stylelint-config",
   "type": "module",
   "version": "7.3.2",
-  "packageManager": "pnpm@9.14.3",
+  "packageManager": "pnpm@9.14.4",
   "description": "@radum Stylelint Shareable Config",
   "author": "Radu Micu",
   "license": "MIT",
@@ -61,15 +61,15 @@
     "@stylelint-types/stylelint-scss": "^6.5.0",
     "@stylelint-types/stylelint-stylistic": "^3.0.1",
     "auto": "^11.3.0",
-    "eslint": "^9.15.0",
+    "eslint": "^9.16.0",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
     "stylelint": "^16.11.0",
-    "stylelint-define-config": "^1.7.0",
+    "stylelint-define-config": "^1.8.0",
     "tsup": "^8.3.5",
-    "vitest": "^2.1.6"
+    "vitest": "^2.1.7"
   },
   "lint-staged": {
     "*": "eslint --flag unstable_ts_config --fix"
