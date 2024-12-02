@@ -1,7 +1,7 @@
 /* Test Sass File for Linting */
-$primary-color: #007acc;
-$secondary-color: #005fa3;
-$text-color: #222;
+$primary-color: #007ACC;
+$secondary-color: #005FA3;
+$text-color: #222222;
 $font-stack: arial, sans-serif;
 
 /* Function to lighten colors */
@@ -22,7 +22,7 @@ $font-stack: arial, sans-serif;
 
 body {
 	font-family: $font-stack;
-	background-color: #f4f4f9;
+	background-color: #F4F4F9;
 	color: $text-color;
 	margin: 0;
 	padding: 0;
@@ -72,7 +72,7 @@ body {
 
 .card {
 	background-color: white;
-	border: 1px solid #ddd;
+	border: 1px solid #DDDDDD;
 	border-radius: 5px;
 	padding: 20px;
 	box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
