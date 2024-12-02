@@ -41,13 +41,13 @@ importers:
         version: 8.1.0(@typescript-eslint/utils@8.15.0(eslint@9.15.0)(typescript@5.7.2))(@vue/compiler-sfc@3.5.13)(eslint@9.15.0)(typescript@5.7.2)(vitest@2.1.6(@types/node@22.9.3))
       '@stylelint-types/stylelint-order':
         specifier: ^6.0.4
-        version: 6.0.4(stylelint-define-config@1.7.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))
+        version: 6.0.4(stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))
       '@stylelint-types/stylelint-scss':
         specifier: ^6.5.0
-        version: 6.5.0(stylelint-define-config@1.7.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))
+        version: 6.5.0(stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))
       '@stylelint-types/stylelint-stylistic':
         specifier: ^3.0.1
-        version: 3.0.1(stylelint-define-config@1.7.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))
+        version: 3.0.1(stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))
       auto:
         specifier: ^11.3.0
         version: 11.3.0(@types/node@22.9.3)(typescript@5.7.2)
@@ -71,7 +71,7 @@ importers:
         version: 16.11.0(typescript@5.7.2)
       stylelint-define-config:
         specifier: ^1.7.0
-        version: 1.7.0(stylelint@16.11.0(typescript@5.7.2))
+        version: 1.8.0(stylelint@16.11.0(typescript@5.7.2))
       vitest:
         specifier: ^2.1.6
         version: 2.1.6(@types/node@22.9.3)
@@ -3064,8 +3064,8 @@ packages:
   style-search@0.1.0:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
 
-  stylelint-define-config@1.7.0:
-    resolution: {integrity: sha512-Ktb1xeqp0penQnFdW9ctlzJi2i3lGS86ImnDygW6APaoaCCTzzDLsAqky2aaZphve6oTEBj7j3w7P712CCgeMw==}
+  stylelint-define-config@1.8.0:
+    resolution: {integrity: sha512-rvPW4Co2YX6f8GoyDYhTada0yamK8AwPc//k60lR0JpMl/UzApm3NnnSEAkMPwtgP3OCXQE+waq5SHmiC19/cQ==}
     engines: {node: '>=18.0.0', npm: '>=9.0.0', pnpm: '>=8.6.0'}
     peerDependencies:
       stylelint: '>=16.0.0'
@@ -4108,21 +4108,21 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.27.4':
     optional: true
 
-  '@stylelint-types/stylelint-order@6.0.4(stylelint-define-config@1.7.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))':
+  '@stylelint-types/stylelint-order@6.0.4(stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))':
     dependencies:
-      stylelint-define-config: 1.7.0(stylelint@16.11.0(typescript@5.7.2))
+      stylelint-define-config: 1.8.0(stylelint@16.11.0(typescript@5.7.2))
     optionalDependencies:
       stylelint: 16.11.0(typescript@5.7.2)
 
-  '@stylelint-types/stylelint-scss@6.5.0(stylelint-define-config@1.7.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))':
+  '@stylelint-types/stylelint-scss@6.5.0(stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))':
     dependencies:
-      stylelint-define-config: 1.7.0(stylelint@16.11.0(typescript@5.7.2))
+      stylelint-define-config: 1.8.0(stylelint@16.11.0(typescript@5.7.2))
     optionalDependencies:
       stylelint: 16.11.0(typescript@5.7.2)
 
-  '@stylelint-types/stylelint-stylistic@3.0.1(stylelint-define-config@1.7.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))':
+  '@stylelint-types/stylelint-stylistic@3.0.1(stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))':
     dependencies:
-      stylelint-define-config: 1.7.0(stylelint@16.11.0(typescript@5.7.2))
+      stylelint-define-config: 1.8.0(stylelint@16.11.0(typescript@5.7.2))
     optionalDependencies:
       stylelint: 16.11.0(typescript@5.7.2)
 
@@ -6898,7 +6898,7 @@ snapshots:
 
   style-search@0.1.0: {}
 
-  stylelint-define-config@1.7.0(stylelint@16.11.0(typescript@5.7.2)):
+  stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)):
     dependencies:
       csstype: 3.1.3
       stylelint: 16.11.0(typescript@5.7.2)
