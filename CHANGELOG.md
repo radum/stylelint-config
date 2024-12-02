@@ -1,3 +1,18 @@
+# v7.3.2 (Mon Dec 02 2024)
+
+#### 🐛 Bug Fix
+
+- Added a build step because a pure ESM config doesn't work with Stylelint VSCode extension [#90](https://github.com/radum/stylelint-config/pull/90) ([@radum](https://github.com/radum))
+- chore(deps-dev): bump eslint from 9.15.0 to 9.16.0 [#88](https://github.com/radum/stylelint-config/pull/88) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump stylelint-define-config from 1.7.0 to 1.8.0 [#89](https://github.com/radum/stylelint-config/pull/89) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v7.3.1 (Fri Nov 29 2024)
 
 #### 🐛 Bug Fix
