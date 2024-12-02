@@ -65,7 +65,7 @@ ol {
 /* Descendant selectors */
 .card .title {
 	font-weight: bold;
-	color: #222;
+	color: #222222;
 }
 
 /* ID selector */
