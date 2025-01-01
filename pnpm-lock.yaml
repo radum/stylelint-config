@@ -47,7 +47,7 @@ importers:
         version: 6.5.0(stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))
       '@stylelint-types/stylelint-stylistic':
         specifier: ^3.0.1
-        version: 3.0.1(stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))
+        version: 3.1.1(stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))
       auto:
         specifier: ^11.3.0
         version: 11.3.0(@types/node@22.9.3)(typescript@5.7.2)
@@ -814,8 +814,8 @@ packages:
       stylelint:
         optional: true
 
-  '@stylelint-types/stylelint-stylistic@3.0.1':
-    resolution: {integrity: sha512-nINnVy2CS68iYxj4UYAoLBbe3huSjD9HqkR8T1tvg6mO1JP5mpLnlK4qtSHKze9zsHiRwh1n6ATFvqFMZw+X0w==}
+  '@stylelint-types/stylelint-stylistic@3.1.1':
+    resolution: {integrity: sha512-tg1a+vRGO+u9C7r19CzHze4gDvrl8e1Y6zROYdU2eqf1Xz69e9hGrWCcAkdMD42a2hO3tfl/9sgour21yYZ/EQ==}
     engines: {node: '>=18.0.0', npm: '>=9.0.0', pnpm: '>=8.6.0'}
     peerDependencies:
       stylelint: '>=16.0.0'
@@ -4552,7 +4552,7 @@ snapshots:
     optionalDependencies:
       stylelint: 16.11.0(typescript@5.7.2)
 
-  '@stylelint-types/stylelint-stylistic@3.0.1(stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))':
+  '@stylelint-types/stylelint-stylistic@3.1.1(stylelint-define-config@1.8.0(stylelint@16.11.0(typescript@5.7.2)))(stylelint@16.11.0(typescript@5.7.2))':
     dependencies:
       stylelint-define-config: 1.8.0(stylelint@16.11.0(typescript@5.7.2))
     optionalDependencies:
