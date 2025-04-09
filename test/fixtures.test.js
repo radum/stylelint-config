@@ -1,7 +1,7 @@
+import fs from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { execa } from 'execa';
-import fg from 'fast-glob';
-import fs from 'fs-extra';
+import { glob } from 'tinyglobby';
 import { afterAll, beforeAll, it } from 'vitest';
 
 beforeAll(async () => {
@@ -26,7 +26,8 @@ function runWithConfig(name, configs, fileTypes, ...items) {
 			const output = resolve('fixtures/output', name);
 			const target = resolve('_fixtures', name);
 
-			await fs.copy(from, target, {
+			await fs.cp(from, target, {
+				recursive: true,
 				filter: (src) => {
 					return !src.includes('node_modules');
 				}
@@ -55,6 +56,7 @@ export default radum(
 				stylelintOutput = JSON.parse(stderr.trim());
 			}
 			catch {
+				// eslint-disable-next-line no-console
 				console.log('Parse error');
 				console.error(stderr);
 			}
@@ -63,7 +65,7 @@ export default radum(
 			expect(stylelintOutput[0].errored).toBe(true);
 			expect(stylelintOutput[0].warnings.length).toBeGreaterThan(0);
 
-			const files = await fg('**/*', {
+			const files = await glob('**/*', {
 				ignore: ['node_modules', 'stylelint.config.js'],
 				cwd: target
 			});
@@ -74,8 +76,7 @@ export default radum(
 					const source = await fs.readFile(join(from, file), 'utf-8');
 					const outputPath = join(output, file);
 					if (content === source) {
-						if (fs.existsSync(outputPath))
-							await fs.remove(outputPath);
+						await fs.rm(outputPath, { force: true });
 						return;
 					}
 					await expect.soft(content).toMatchFileSnapshot(join(output, file));

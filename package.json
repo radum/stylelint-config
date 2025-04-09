@@ -2,7 +2,7 @@
   "name": "@radum/stylelint-config",
   "type": "module",
   "version": "7.4.0",
-  "packageManager": "pnpm@9.14.4",
+  "packageManager": "pnpm@10.8.0",
   "description": "@radum Stylelint Shareable Config",
   "author": "Radu Micu",
   "license": "MIT",
@@ -45,31 +45,30 @@
     "stylelint": "^16.11.0"
   },
   "dependencies": {
-    "@stylistic/stylelint-plugin": "^3.1.1",
+    "@stylistic/stylelint-plugin": "^3.1.2",
     "postcss-scss": "^4.0.9",
-    "stylelint-no-unsupported-browser-features": "^8.0.2",
+    "stylelint-no-unsupported-browser-features": "^8.0.4",
     "stylelint-order": "^6.0.4",
-    "stylelint-scss": "^6.10.0"
+    "stylelint-scss": "^6.11.1"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^11.3.0",
     "@auto-it/first-time-contributor": "^11.3.0",
     "@auto-it/npm": "^11.3.0",
     "@auto-it/released": "^11.3.0",
-    "@radum/eslint-config": "^8.1.0",
+    "@radum/eslint-config": "^10.0.0",
     "@stylelint-types/stylelint-order": "^6.0.4",
     "@stylelint-types/stylelint-scss": "^6.5.0",
-    "@stylelint-types/stylelint-stylistic": "^3.0.1",
+    "@stylelint-types/stylelint-stylistic": "^3.1.1",
     "auto": "^11.3.0",
-    "eslint": "^9.16.0",
-    "fast-glob": "^3.3.2",
-    "fs-extra": "^11.2.0",
+    "eslint": "^9.24.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.2.10",
-    "stylelint": "^16.11.0",
-    "stylelint-define-config": "^1.8.0",
-    "tsup": "^8.3.5",
-    "vitest": "^2.1.7"
+    "lint-staged": "^15.5.0",
+    "stylelint": "^16.18.0",
+    "stylelint-define-config": "^16.17.0",
+    "tinyglobby": "^0.2.12",
+    "tsup": "^8.4.0",
+    "vitest": "^3.1.1"
   },
   "lint-staged": {
     "*": "eslint --flag unstable_ts_config --fix"

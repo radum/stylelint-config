@@ -10,14 +10,16 @@ To deploy a new version on the final PR add a `release` label to it + a label th
 Make sure the `GITHUB_TOKEN` and `NPM_TOKEN` env vars are set. Also if you have 2FA enabled Auto only works properly if you manually update your local `~/.npmrc` file with the NPM token above like this `//registry.npmjs.org/:_authToken={TOOKEN VALUE HERE}`.
 Unless I do that it fails to npm publish. Until that is fixed either use CI or this for deployments.
 
-Then run `npx auto shipit` which will run Intuit Auto.
+Then run `npx auto shipit` on the `main` branc which will run Intuit Auto.
+
+If canary versions are released this should be used `npx auto shipit --only-graduate-with-release-label` ([docs here](https://intuit.github.io/auto/docs/generated/shipit)).
 
 Example:
 
 ```bash
 export GITHUB_TOKEN=...
 export NPM_TOKEN=...
-npx auto shipit --only-graduate-with-release-label
+npx auto shipit
 # This is to remove them from your local
 unset GITHUB_TOKEN
 unset NPM_TOKEN
