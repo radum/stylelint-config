@@ -1,3 +1,15 @@
+# v7.5.0 (Wed Apr 09 2025)
+
+#### 🚀 Enhancement
+
+- Bump deps and other changes, added  rule [#104](https://github.com/radum/stylelint-config/pull/104) ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v7.4.0 (Mon Dec 02 2024)
 
 #### 🚀 Enhancement
