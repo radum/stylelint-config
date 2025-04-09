@@ -6,9 +6,14 @@
   "description": "@radum Stylelint Shareable Config",
   "author": "Radu Micu",
   "license": "MIT",
+  "funding": "https://github.com/sponsors/radum",
+  "homepage": "https://github.com/radum/stylelint-config",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/radum/stylelint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/radum/stylelint-config/issues"
   },
   "keywords": [
     "stylelint",
