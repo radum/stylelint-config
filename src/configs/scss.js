@@ -38,6 +38,7 @@ export function scss() {
 				]
 			}
 		],
+		'scss/no-duplicate-load-rules': true,
 		'scss/comment-no-empty': true,
 		'scss/declaration-nested-properties-no-divided-groups': true,
 		'scss/dollar-variable-no-missing-interpolation': true,
