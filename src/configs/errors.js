@@ -1,6 +1,5 @@
 export function possibleErrors() {
 	return {
-		'no-duplicate-load-rules': true,
 		'annotation-no-unknown': true,
 		'at-rule-no-unknown': true,
 		'block-no-empty': true,
