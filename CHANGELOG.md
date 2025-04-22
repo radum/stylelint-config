@@ -1,3 +1,15 @@
+# v7.5.1 (Tue Apr 22 2025)
+
+#### 🐛 Bug Fix
+
+- Fix no-duplicate-load-rules rule not found [#107](https://github.com/radum/stylelint-config/pull/107) ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v7.5.0 (Wed Apr 09 2025)
 
 #### 🚀 Enhancement
