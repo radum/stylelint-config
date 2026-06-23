@@ -1,3 +1,15 @@
+# v7.6.0 (Tue Jun 23 2026)
+
+#### 🚀 Enhancement
+
+- Bump all modules and Stylelint and use tsdown instead of tsup [#116](https://github.com/radum/stylelint-config/pull/116) ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v7.5.1 (Tue Apr 22 2025)
 
 #### 🐛 Bug Fix
