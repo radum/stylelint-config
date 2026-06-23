@@ -1,5 +1,13 @@
+shellEmulator: true
+
+trustPolicy: no-downgrade
+
 packages:
   - fixtures/*
+
+allowBuilds:
+  esbuild: true
+  simple-git-hooks: true
 
 onlyBuiltDependencies:
   - esbuild

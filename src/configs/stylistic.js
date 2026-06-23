@@ -46,6 +46,7 @@ export function stylistic(options = {}) {
 		'@stylistic/no-eol-whitespace': true,
 		'@stylistic/no-extra-semicolons': true,
 		'@stylistic/no-missing-end-of-source-newline': true,
+		'@stylistic/no-multiple-whitespaces': true,
 		'@stylistic/number-leading-zero': 'always',
 		'@stylistic/number-no-trailing-zeros': true,
 		'@stylistic/property-case': 'lower',
