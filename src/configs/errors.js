@@ -1,7 +1,11 @@
 export function possibleErrors() {
 	return {
 		'annotation-no-unknown': true,
+		'at-rule-descriptor-no-unknown': true,
+		'at-rule-descriptor-value-no-unknown': true,
+		'at-rule-no-deprecated': true,
 		'at-rule-no-unknown': true,
+		'at-rule-prelude-no-invalid': [true, { ignoreAtRules: ['media'] }],
 		'block-no-empty': true,
 		'color-no-invalid-hex': true,
 		'comment-no-empty': true,
@@ -14,23 +18,30 @@ export function possibleErrors() {
 			}
 		],
 		'declaration-block-no-shorthand-property-overrides': true,
+		'declaration-property-value-keyword-no-deprecated': true,
+		'declaration-property-value-no-unknown': true,
 		'font-family-no-duplicate-names': true,
 		'font-family-no-missing-generic-family-keyword': true,
 		'function-calc-no-unspaced-operator': true,
-		'function-linear-gradient-no-nonstandard-direction': true,
-		'function-no-unknown': true,
 		'keyframe-block-no-duplicate-selectors': true,
 		'keyframe-declaration-no-important': true,
+		'function-linear-gradient-no-nonstandard-direction': true,
+		'function-no-unknown': true,
 		'media-feature-name-no-unknown': true,
+		'media-feature-name-value-no-unknown': true,
 		'media-query-no-invalid': true,
+		'media-type-no-deprecated': true,
 		'named-grid-areas-no-invalid': true,
 		'no-descending-specificity': true,
+		'nesting-selector-no-missing-scoping-root': true,
 		'no-duplicate-at-import-rules': true,
 		'no-duplicate-selectors': true,
 		'no-empty-source': true,
 		'no-invalid-double-slash-comments': true,
 		'no-invalid-position-at-import-rule': true,
+		'no-invalid-position-declaration': true,
 		'no-irregular-whitespace': true,
+		'property-no-deprecated': true,
 		'property-no-unknown': true,
 		'selector-anb-no-unmatchable': true,
 		'selector-pseudo-class-no-unknown': true,
@@ -41,7 +52,8 @@ export function possibleErrors() {
 				ignore: ['custom-elements']
 			}
 		],
-		'string-no-newline': true,
+		'string-no-newline': [true, { ignore: ['at-rule-preludes', 'declaration-values'] }],
+		'syntax-string-no-invalid': true,
 		'unit-no-unknown': true
 	};
 }

@@ -3,25 +3,39 @@ import { camelCase } from './../utils.js';
 export function scss() {
 	return {
 		'annotation-no-unknown': null,
+		'at-rule-descriptor-no-unknown': null,
+		'at-rule-descriptor-value-no-unknown': null,
 		'at-rule-no-unknown': null,
+		'at-rule-prelude-no-invalid': null,
+		'color-no-invalid-hex': true,
 		'comment-no-empty': null,
+		'declaration-property-value-no-unknown': null,
+		'function-linear-gradient-no-nonstandard-direction': true,
 		'function-no-unknown': null,
+		'media-feature-name-value-no-unknown': null,
 		'media-query-no-invalid': null,
+		'nesting-selector-no-missing-scoping-root': [
+			true,
+			{
+				ignoreAtRules: ['mixin']
+			}
+		],
+		'no-descending-specificity': null,
+		'no-duplicate-selectors': null,
 		'no-invalid-position-at-import-rule': [
 			true,
 			{
 				ignoreAtRules: ['use', 'forward']
 			}
 		],
-		'at-rule-empty-line-before': [
-			'always',
+		'no-invalid-position-declaration': [
+			true,
 			{
-				except: ['blockless-after-blockless', 'first-nested'],
-				ignore: ['after-comment'],
-				ignoreAtRules: ['else']
+				ignoreAtRules: ['mixin']
 			}
 		],
-		'import-notation': 'string',
+		'string-no-newline': true,
+		'unit-no-unknown': true,
 		'scss/at-extend-no-missing-placeholder': true,
 		'scss/at-if-no-null': true,
 		'scss/at-rule-no-unknown': [
@@ -51,6 +65,22 @@ export function scss() {
 		'scss/operator-no-newline-after': true,
 		'scss/operator-no-newline-before': true,
 		'scss/operator-no-unspaced': true,
+		'at-rule-empty-line-before': [
+			'always',
+			{
+				except: ['blockless-after-blockless', 'first-nested'],
+				ignore: ['after-comment'],
+				ignoreAtRules: ['else']
+			}
+		],
+		'import-notation': 'string',
+		'length-zero-no-unit': [
+			true,
+			{
+				ignore: ['custom-properties'],
+				ignorePreludeOfAtRules: ['function', 'mixin']
+			}
+		],
 		'scss/at-else-closing-brace-newline-after': 'always-last-in-chain',
 		'scss/at-else-closing-brace-space-after': 'always-intermediate',
 		'scss/at-else-empty-line-before': 'never',
@@ -61,7 +91,8 @@ export function scss() {
 		'scss/at-function-pattern': [
 			`^${camelCase}*$`,
 			{
-				message: 'Expected function name to be camelCase'
+				message: (name) =>
+					`Expected function name "${name}" to be camelCase`
 			}
 		],
 
@@ -80,7 +111,8 @@ export function scss() {
 		'scss/at-mixin-pattern': [
 			'^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$',
 			{
-				message: 'Expected mixin name to be kebab-case'
+				message: (name) =>
+					`Expected mixin name "${name}" to be kebab-case`
 			}
 		],
 		'scss/at-rule-conditional-no-parentheses': null,
@@ -97,7 +129,7 @@ export function scss() {
 		// 'scss/dollar-variable-pattern': [
 		// 	'^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$',
 		// 	{
-		// 		message: 'Expected variable to be kebab-case'
+		// 		message: (name) => `Expected variable name "${name}" to be kebab-case`,
 		// 	}
 		// ],
 
@@ -112,7 +144,8 @@ export function scss() {
 		'scss/percent-placeholder-pattern': [
 			'^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$',
 			{
-				message: 'Expected placeholder to be kebab-case'
+				message: (name) =>
+					`Expected placeholder name "${name}" to be kebab-case`
 			}
 		]
 	};
