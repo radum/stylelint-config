@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import { join, resolve } from 'node:path';
-import { execa } from 'execa';
+import { x } from 'tinyexec';
 import { glob } from 'tinyglobby';
 import { afterAll, beforeAll, it } from 'vitest';
 
@@ -45,15 +45,22 @@ export default radum(
 	`
 			);
 
-			const { stderr } = await execa('npx', ['stylelint', `**/*.${fileTypes}`, '--fix', '--formatter=json'], {
-				cwd: target,
-				stdio: 'pipe',
-				reject: false
+			const { stderr } = await x('npx', ['stylelint', `**/*.${fileTypes}`, '--fix', '--formatter=json'], {
+				throwOnError: false,
+				nodeOptions: {
+					cwd: target,
+					stdio: 'pipe'
+				}
 			});
 
 			let stylelintOutput;
 			try {
-				stylelintOutput = JSON.parse(stderr.trim());
+				const output = stderr.trim();
+				const firstLineEnd = output.indexOf('\n');
+				const json = output.startsWith('[') || firstLineEnd === -1
+					? output
+					: output.slice(firstLineEnd + 1);
+				stylelintOutput = JSON.parse(json);
 			}
 			catch {
 				// eslint-disable-next-line no-console
