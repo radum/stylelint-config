@@ -1,3 +1,23 @@
+# v7.6.1 (Tue Sep 15 2026)
+
+#### 🐛 Bug Fix
+
+- Bump deps [#120](https://github.com/radum/stylelint-config/pull/120) ([@radum](https://github.com/radum))
+
+#### ⚠️ Pushed to `main`
+
+- Update docs and remove first time contribs because is not working anymore for some reason ([@radum](https://github.com/radum))
+
+#### 🔩 Dependency Updates
+
+- Update the peer deps and bump the other ones [#119](https://github.com/radum/stylelint-config/pull/119) ([@radum](https://github.com/radum))
+
+#### Authors: 1
+
+- Radu Micu ([@radum](https://github.com/radum))
+
+---
+
 # v7.6.0 (Tue Jun 23 2026)
 
 #### 🚀 Enhancement
