@@ -1,11 +1,10 @@
 {
-	"baseBranch": "main",
-	"onlyPublishWithReleaseLabel": true,
-	"noVersionPrefix": false,
-	"plugins": [
-		"npm",
-		"all-contributors",
-		"first-time-contributor",
-		"released"
-	]
+  "baseBranch": "main",
+  "onlyPublishWithReleaseLabel": true,
+  "noVersionPrefix": false,
+  "plugins": [
+    "npm",
+    "all-contributors",
+    "released"
+  ]
 }
